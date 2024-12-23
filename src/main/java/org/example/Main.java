@@ -11,7 +11,7 @@ public class Main {
         // customer.buy("product");
 
         // admin.stockManagement();
-        // admin.showStock();
+        // admin.showSales();
         // admin.setProductPrice(price);
     }
 }
