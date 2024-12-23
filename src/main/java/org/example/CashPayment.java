@@ -1,17 +1,17 @@
 package org.example;
 
-public class CashPayment implements Paymentable, BalanceCheckable {
+public class CashPayment implements Paymentable, Changeable {
 
     // 결제
     @Override
     public void pay(Wallet wallet, int productPrice) {
         wallet.balance -= productPrice;
-        balanceCheck(wallet);
+        calculationChange(wallet);
     }
 
-    // 잔액 확인
+    // 거스름돈 계산
     @Override
-    public void balanceCheck(Wallet wallet) {
-        System.out.println(wallet.balance);
+    public void calculationChange(Wallet wallet) {
+        System.out.println("Change: " + wallet.balance);
     }
 }
