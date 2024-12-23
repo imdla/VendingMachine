@@ -1,5 +1,5 @@
 package org.example;
 
-public class User {
-    // user
+public abstract class User {
+    
 }
