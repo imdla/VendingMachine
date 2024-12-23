@@ -9,5 +9,9 @@ public class Main {
 //        System.out.println(word1);
 
         // customer.buy("product");
+
+        // admin.stockManagement();
+        // admin.showStock();
+        // admin.setProductPrice(price);
     }
 }
