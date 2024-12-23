@@ -22,15 +22,16 @@ public class VendingMachine {
     }
 
     // 결제 -> productSales integer 업데이트
-    public void pay(String productName, String paymentType) {
+    public void pay(String productName, Wallet wallet) {
+        String paymentType = String.valueOf(wallet.type);
         Paymentable paymentable = null;
 
         // 결제
         switch (paymentType) {
-            case "cash":
+            case "CASH":
                 paymentable = new CashPayment();
                 break;
-            case "card":
+            case "CARD":
 //                paymentable = new CardPayment();
                 break;
         }
