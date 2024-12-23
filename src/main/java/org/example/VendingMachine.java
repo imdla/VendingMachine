@@ -25,6 +25,13 @@ public class VendingMachine {
     public void pay(String productName, Wallet wallet) {
         String paymentType = String.valueOf(wallet.type);
         Paymentable paymentable = null;
+        int productPrice = 0;
+
+        for (Product product : productList) {
+            if (product.name.equals(productName)) {
+                productPrice = product.price;
+            }
+        }
 
         // 결제
         switch (paymentType) {
@@ -35,7 +42,7 @@ public class VendingMachine {
 //                paymentable = new CardPayment();
                 break;
         }
-        paymentable.pay(wallet);
+        paymentable.pay(wallet, productPrice);
 
         // 매출 업데이트
         int amount = productSales.getOrDefault(productName, 0);
