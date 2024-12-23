@@ -22,12 +22,22 @@ public class VendingMachine {
     }
 
     // 결제 -> productSales integer 업데이트
-    public void pay(String productName) {
-        // 결제
+    public void pay(String productName, String paymentType) {
+        Paymentable paymentable = null;
 
-        
+        // 결제
+        switch (paymentType) {
+            case "cash":
+                paymentable = new CashPayment();
+                break;
+            case "card":
+//                paymentable = new CardPayment();
+                break;
+        }
+        paymentable.pay();
+
         // 매출 업데이트
-        int amount = productSales.get(productName);
-        productSales.put(productName, amount+=1);
+        int amount = productSales.getOrDefault(productName, 0);
+        productSales.put(productName, amount + 1);
     }
 }
