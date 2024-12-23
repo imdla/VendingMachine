@@ -1,10 +1,11 @@
 package org.example;
 
 public class Customer extends User {
-    // 현금, 10000 가짐
+    protected Wallet wallet;
 
-    public Customer(VendingMachine vendingMachine) {
+    public Customer(VendingMachine vendingMachine, Wallet wallet) {
         super(vendingMachine);
+        this.wallet = wallet;
     }
 
     // 상품 구매
