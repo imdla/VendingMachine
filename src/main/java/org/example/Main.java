@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayDeque;
 import java.util.Scanner;
 
 public class Main {
@@ -24,10 +25,21 @@ public class Main {
         vm.addProduct(snack);
         vm.addProduct(popcorn);
 
-        // 고객 구매
+        // 고객
         Wallet wallet = new Wallet("card", 10000);
         Customer customer = new Customer(vm, wallet);
 
         customer.buy("coke");
+
+        Wallet wallet2 = new Wallet("cash", 10000);
+        Customer customer2 = new Customer(vm, wallet2);
+
+        customer2.buy("popcorn");
+
+        // 관리자
+        Admin admin = new Admin(vm);
+        admin.stockManagement();
+        admin.showSales();
+        admin.setProductPrice("coke", 100);
     }
 }

@@ -30,7 +30,8 @@ public class Admin extends User implements ProductManagable {
                 }
             }
 
-            System.out.println(name + ": " + products.get(name)*productPrice + "원");
+            int sales = (int) products.get(name) * productPrice;
+            System.out.println(name + ": " + sales + " won");
         }
     }
 
