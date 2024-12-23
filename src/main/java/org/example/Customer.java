@@ -9,6 +9,6 @@ public class Customer extends User {
 
     // 상품 구매
     public void buy(String productName) {
-        vendingMachine.pay(productName, "cash");
+        vendingMachine.pay(productName, "wallet");
     }
 }
