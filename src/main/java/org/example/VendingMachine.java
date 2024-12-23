@@ -35,7 +35,7 @@ public class VendingMachine {
 //                paymentable = new CardPayment();
                 break;
         }
-        paymentable.pay();
+        paymentable.pay(wallet);
 
         // 매출 업데이트
         int amount = productSales.getOrDefault(productName, 0);
