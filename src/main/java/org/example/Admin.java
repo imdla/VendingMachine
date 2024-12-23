@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.List;
+import java.util.Map;
 
 public class Admin extends User implements ProductManagable {
 
@@ -20,7 +21,17 @@ public class Admin extends User implements ProductManagable {
     // 매출 확인
     @Override
     public void showSales() {
+        Map<String, Integer> products = vendingMachine.productSales;
+        int productPrice = 0;
+        for (String name : products.keySet()) {
+            for (Product product : vendingMachine.productList) {
+                if (product.name.equals(name)) {
+                    productPrice = product.price;
+                }
+            }
 
+            System.out.println(name + ": " + products.get(name)*productPrice + "원");
+        }
     }
 
     // 상품 가격 설정
