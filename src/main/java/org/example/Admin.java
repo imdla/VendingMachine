@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.List;
+
 public class Admin extends User implements ProductManagable {
     protected VendingMachine vendingMachine;
 
@@ -10,7 +12,10 @@ public class Admin extends User implements ProductManagable {
     // 재고 관리
     @Override
     public void stockManagement() {
-        
+        List<Product> productList = vendingMachine.productList;
+        for (Product product : productList) {
+            System.out.println(product.name + ": " + product.stock);
+        }
     }
 
     // 매출 확인
