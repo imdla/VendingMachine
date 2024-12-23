@@ -10,7 +10,7 @@ public class Wallet {
     }
 
     public Wallet(String type, int balance) {
-        this.type = Type.valueOf(type);
+        this.type = Type.valueOf(type.toUpperCase());
         this.balance = balance;
     }
 }
