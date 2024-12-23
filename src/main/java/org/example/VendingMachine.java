@@ -39,7 +39,7 @@ public class VendingMachine {
                 paymentable = new CashPayment();
                 break;
             case "CARD":
-//                paymentable = new CardPayment();
+                paymentable = new CardPayment();
                 break;
         }
         paymentable.pay(wallet, productPrice);
