@@ -8,5 +8,5 @@ public interface ProductManagable {
     void showSales();
 
     // 상품 가격 설정
-    void setProductPrice(int price);
+    void setProductPrice(String name, int price);
 }

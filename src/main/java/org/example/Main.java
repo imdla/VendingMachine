@@ -12,6 +12,6 @@ public class Main {
 
         // admin.stockManagement();
         // admin.showSales();
-        // admin.setProductPrice(price);
+        // admin.setProductPrice(name, price);
     }
 }

@@ -26,8 +26,21 @@ public class Admin extends User implements ProductManagable {
 
     // 상품 가격 설정
     @Override
-    public void setProductPrice(int price) {
+    public void setProductPrice(String name, int price) {
+        List<Product> productList = vendingMachine.productList;
+        boolean flag = false;
 
+        for (Product product : productList) {
+            if (product.name.equals(name)) {
+                flag = true;
+                product.price = price;
+                System.out.println(product.name + ": " + product.price);
+            }
+        }
+
+        if (!flag) {
+            System.out.println("Invalid product name !");
+        }
     }
 
 }
