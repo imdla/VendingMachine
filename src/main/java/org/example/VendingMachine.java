@@ -19,4 +19,6 @@ public class VendingMachine {
         productList.add(product);
         return productList;
     }
+
+    // 결제 -> productSales integer(금액) 업데이트
 }
