@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class VendingMachine {
     public List<Product> productList;
-    public Map<Product, Integer> productSales;
+    public Map<String, Integer> productSales;
 
     public VendingMachine() {
         this.productList = new ArrayList<>();
@@ -17,8 +17,17 @@ public class VendingMachine {
     // 제품 추가
     public List<Product> addProduct(Product product) {
         productList.add(product);
+        productSales.put(product.name, 0);
         return productList;
     }
 
-    // 결제 -> productSales integer(금액) 업데이트
+    // 결제 -> productSales integer 업데이트
+    public void pay(String productName) {
+        // 결제
+
+        
+        // 매출 업데이트
+        int amount = productSales.get(productName);
+        productSales.put(productName, amount+=1);
+    }
 }
