@@ -60,9 +60,9 @@ public class Main {
 //        customer2.buy("popcorn");
 //
 //        // 관리자
-//        Admin admin = new Admin(vm);
-//        admin.stockManagement();
-//        admin.showSales();
-//        admin.setProductPrice("coke", 100);
+        Admin admin = new Admin(vm);
+        admin.stockManagement();
+        admin.showSales();
+        admin.setProductPrice("coke", 100);
     }
 }

@@ -44,6 +44,13 @@ public class VendingMachine {
         }
         paymentable.pay(wallet, productPrice);
 
+        // 재고 업데이트
+        for (Product product : productList) {
+            if (product.name.equals(productName)) {
+                product.stock = product.stock - 1;
+            }
+        }
+
         // 매출 업데이트
         int amount = productSales.getOrDefault(productName, 0);
         productSales.put(productName, amount + 1);
