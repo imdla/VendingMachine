@@ -22,17 +22,12 @@ public class Admin extends User implements ProductManagable {
     // 매출 확인
     @Override
     public void showSales() {
-        Map<String, Integer> products = vendingMachine.productSales;
-        int productPrice = 0;
-        
-        for (String name : products.keySet()) {
-            for (Product product : vendingMachine.productList) {
-                if (product.name.equals(name)) {
-                    productPrice = product.price;
-                }
-            }
+        Map<String, Integer> productSales = vendingMachine.productSales;
 
-            int sales = (int) products.get(name) * productPrice;
+        for (String name : vendingMachine.productMap.keySet()) {
+            List<Integer> productList = vendingMachine.productMap.get(name);
+            int productPrice = productList.getLast();
+            int sales = productSales.get(name) * productPrice;
             System.out.println(name + ": " + sales + " won");
         }
     }
