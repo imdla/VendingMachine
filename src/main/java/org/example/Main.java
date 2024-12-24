@@ -1,7 +1,9 @@
 package org.example;
 
 import java.util.ArrayDeque;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,6 +23,7 @@ public class Main {
         vm.addProduct(snack);
         vm.addProduct(popcorn);
 
+        /// ////////////////////////////////////////////////////////////////////////////
         // 고객
         // 1. 지갑 생성
         Scanner scanner = new Scanner(System.in);
@@ -38,12 +41,18 @@ public class Main {
 //            System.out.println("Incorrect type or balance !");
 //        }
 
+        // 2. 고객 생성
+        Customer customer = new Customer(vm, wallet);
 
-//
-//        Customer customer = new Customer(vm, wallet);
-//
-//        customer.buy("coke");
-//
+         // 3. 상품 구매
+        System.out.println("What kind of product are you going to buy ?");
+        List<String> productList = vm.productList.stream()
+                .map(p -> p.name)
+                .toList();
+        System.out.println(productList);
+        String productName = scanner.next();
+        customer.buy(productName);
+
 //        Wallet wallet2 = new Wallet("cash", 10000);
 //        Customer customer2 = new Customer(vm, wallet2);
 //
