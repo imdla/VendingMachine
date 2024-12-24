@@ -26,20 +26,30 @@ public class Main {
         vm.addProduct(popcorn);
 
         // 고객
-        Wallet wallet = new Wallet("card", 10000);
-        Customer customer = new Customer(vm, wallet);
+        String type = "card";
+        Wallet wallet2 = null;
+        // 지갑 생성 검사
+        if (Wallet.initialValidation(type)) {
+            wallet2 = new Wallet(type, 10000);
+        } else {
+            System.out.println("Incorrect type !");
+        }
 
-        customer.buy("coke");
 
-        Wallet wallet2 = new Wallet("cash", 10000);
-        Customer customer2 = new Customer(vm, wallet2);
-
-        customer2.buy("popcorn");
-
-        // 관리자
-        Admin admin = new Admin(vm);
-        admin.stockManagement();
-        admin.showSales();
-        admin.setProductPrice("coke", 100);
+//        Wallet wallet = new Wallet("card", 10000);
+//        Customer customer = new Customer(vm, wallet);
+//
+//        customer.buy("coke");
+//
+//        Wallet wallet2 = new Wallet("cash", 10000);
+//        Customer customer2 = new Customer(vm, wallet2);
+//
+//        customer2.buy("popcorn");
+//
+//        // 관리자
+//        Admin admin = new Admin(vm);
+//        admin.stockManagement();
+//        admin.showSales();
+//        admin.setProductPrice("coke", 100);
     }
 }
