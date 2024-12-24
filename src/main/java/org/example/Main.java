@@ -16,22 +16,22 @@ public class Main {
         Product popcorn = new EtcProduct("popcorn", 3000, 10);
 
         VendingMachine vm = new VendingMachine();
-        vm.addProduct(coke);
-        vm.addProduct(milk);
-        vm.addProduct(coffee);
-        vm.addProduct(candy);
-        vm.addProduct(snack);
-        vm.addProduct(popcorn);
+//        vm.addProduct(coke);
+//        vm.addProduct(milk);
+//        vm.addProduct(coffee);
+//        vm.addProduct(candy);
+//        vm.addProduct(snack);
+//        vm.addProduct(popcorn);
 
         /// ////////////////////////////////////////////////////////////////////////////
         // 고객
         // 1. 지갑 생성
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("What is the method of payment? (card / cash)");
-        String type = scanner.next();
-        System.out.println("How much balance do you have? (Exceeded 0)");
-        int balance = scanner.nextInt();
-        Wallet wallet = Wallet.makeWallet(type, balance);
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("What is the method of payment? (card / cash)");
+//        String type = scanner.next();
+//        System.out.println("How much balance do you have? (Exceeded 0)");
+//        int balance = scanner.nextInt();
+//        Wallet wallet = Wallet.makeWallet(type, balance);
 
         // 1-2. 지갑 생성 검사
 //        Wallet wallet = null;
@@ -42,16 +42,17 @@ public class Main {
 //        }
 
         // 2. 고객 생성
-        Customer customer = new Customer(vm, wallet);
-
-         // 3. 상품 구매
-        System.out.println("What kind of product are you going to buy ?");
-        List<String> productList = vm.productList.stream()
-                .map(p -> p.name)
-                .toList();
-        System.out.println(productList);
-        String productName = scanner.next();
-        customer.buy(productName);
+//        Customer customer = new Customer(vm, wallet);
+//
+//         // 3. 상품 구매
+//        System.out.println();
+//        System.out.println("What kind of product are you going to buy ?");
+////        List<String> productList = vm.productList.stream()
+////                .map(p -> p.name)
+////                .toList();
+////        System.out.println(productList);
+////        String productName = scanner.next();
+////        customer.buy(productName);
 
         // 다른 고객
 //        Wallet wallet2 = new Wallet("cash", 10000);

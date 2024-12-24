@@ -12,4 +12,9 @@ public class Customer extends User {
     public void buy(String productName) {
         vendingMachine.pay(productName, wallet);
     }
+
+    // 제품명 검사
+//    private boolean validationProductName() {
+//
+//    }
 }
