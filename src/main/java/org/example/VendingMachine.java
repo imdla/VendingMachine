@@ -21,7 +21,7 @@ public class VendingMachine {
         return productList;
     }
 
-    // 결제 -> productSales integer 업데이트
+    // 결제
     public void pay(String productName, Wallet wallet) {
         String paymentType = String.valueOf(wallet.type);
         Paymentable paymentable = null;
@@ -47,5 +47,15 @@ public class VendingMachine {
         // 매출 업데이트
         int amount = productSales.getOrDefault(productName, 0);
         productSales.put(productName, amount + 1);
+    }
+
+    // 제품명 검사
+    public boolean validationProductName(String productName) {
+        for (Product product : productList) {
+            if (product.name.equals(productName)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -53,6 +53,7 @@ public class Main {
         String productName = scanner.next();
         customer.buy(productName);
 
+        // 다른 고객
 //        Wallet wallet2 = new Wallet("cash", 10000);
 //        Customer customer2 = new Customer(vm, wallet2);
 //
