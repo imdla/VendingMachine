@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class Admin extends User implements ProductManagable {
 
@@ -12,9 +13,9 @@ public class Admin extends User implements ProductManagable {
     // 재고 관리
     @Override
     public void stockManagement() {
-        List<Product> productList = vendingMachine.productList;
-        for (Product product : productList) {
-            System.out.println(product.name + ": " + product.stock);
+        for (String name : vendingMachine.productMap.keySet()) {
+            List<Integer> productList = vendingMachine.productMap.get(name);
+            System.out.println(name + ": " + productList.getLast());
         }
     }
 
@@ -23,6 +24,7 @@ public class Admin extends User implements ProductManagable {
     public void showSales() {
         Map<String, Integer> products = vendingMachine.productSales;
         int productPrice = 0;
+        
         for (String name : products.keySet()) {
             for (Product product : vendingMachine.productList) {
                 if (product.name.equals(name)) {
