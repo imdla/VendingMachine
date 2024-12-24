@@ -40,7 +40,7 @@ public class Admin extends User implements ProductManagable {
         if (productMap.containsKey(name)) {
             List<Integer> productList = productMap.get(name);
             productList.set(0, price);
-            System.out.println(name + ": " + productList.get(0));
+            System.out.println(name + ": " + productList.getFirst());
         } else {
             System.out.println("Invalid product name !");
         }
