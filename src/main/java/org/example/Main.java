@@ -5,10 +5,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-//        String word1 = scanner.next();
-//        System.out.println(word1);
-
         // 제품 추가
         Product coke = new Beverage("coke", 1000, 10);
         Product milk = new Beverage("milk", 2000, 5);
@@ -26,17 +22,24 @@ public class Main {
         vm.addProduct(popcorn);
 
         // 고객
-        String type = "card";
-        Wallet wallet2 = null;
-        // 지갑 생성 검사
-        if (Wallet.initialValidation(type)) {
-            wallet2 = new Wallet(type, 10000);
-        } else {
-            System.out.println("Incorrect type !");
-        }
+        // 1. 지갑 생성
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What is the method of payment? (card / cash)");
+        String type = scanner.next();
+        System.out.println("How much balance do you have? (Exceeded 0)");
+        int balance = scanner.nextInt();
+        Wallet wallet = Wallet.makeWallet(type, balance);
+
+        // 1-2. 지갑 생성 검사
+//        Wallet wallet = null;
+//        if (Wallet.initialValidationType(type, balance)) {
+//            wallet = new Wallet(type, balance);
+//        } else {
+//            System.out.println("Incorrect type or balance !");
+//        }
 
 
-//        Wallet wallet = new Wallet("card", 10000);
+//
 //        Customer customer = new Customer(vm, wallet);
 //
 //        customer.buy("coke");
