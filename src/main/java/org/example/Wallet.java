@@ -21,13 +21,13 @@ public class Wallet {
             if (balance > 0) {
                 return new Wallet(type, balance);
             } else {
-                System.out.println("Incorrect balance !");
+                System.out.println("Your basic balance is 10,000won !");
+                return new Wallet(type, 10000);
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("Incorrect type !");
-            System.out.println(e.getMessage());
+            System.out.println("Your basic payment method is cash !");
         }
-        return null;
+        return new Wallet("cash", balance);
     }
 
     // 지갑 생성 시 타입 확인
