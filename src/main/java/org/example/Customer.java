@@ -1,6 +1,6 @@
 package org.example;
 
-public class Customer extends User {
+public class Customer extends User implements ProductNameValidable {
     protected Wallet wallet;
 
     public Customer(VendingMachine vendingMachine, Wallet wallet) {
@@ -17,8 +17,10 @@ public class Customer extends User {
         }
     }
 
+
+
     // 제품명 검사
-    private boolean validationProductName(String productName) {
+    public boolean validationProductName(String productName) {
         if (vendingMachine.productMap.get(productName) == null) {
             return false;
         } else {
