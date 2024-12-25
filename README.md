@@ -18,4 +18,4 @@ Java를 이용한 자판기 생성 프로젝트
 <br />
 
 ## Wireframe
-![자판기.png](assets/%EC%9E%90%ED%8C%90%EA%B8%B0.png)
+![자판기.png](assets/wireframe.png)
