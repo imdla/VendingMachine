@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class VendingMachine implements Updatable {
+public class VendingMachine implements Updatable, stockCheckable {
     public Map<String, List<Integer>> productMap;
     public Map<String, Integer> productSales;
 
@@ -56,6 +56,7 @@ public class VendingMachine implements Updatable {
     }
 
     // 재고 조회
+    @Override
     public boolean checkStock(String productName) {
         List<Integer> productList = productMap.get(productName);
         int productStock = productList.getLast();

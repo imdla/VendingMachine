@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
         // 제품 추가
-        Product coke = new Beverage("coke", 1000, 1);
+        Product coke = new Beverage("coke", 1000, 0);
         Product milk = new Beverage("milk", 2000, 5);
         Product coffee = new Beverage("coffee", 3000, 15);
         Product candy = new EtcProduct("candy", 1000, 10);
