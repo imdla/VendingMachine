@@ -6,12 +6,12 @@ public class CashPayment implements Paymentable, Changeable {
     @Override
     public void pay(Wallet wallet, int productPrice) {
         wallet.balance -= productPrice;
-        calculationChange(wallet);
+        calculateChange(wallet);
     }
 
     // 거스름돈 계산
     @Override
-    public void calculationChange(Wallet wallet) {
+    public void calculateChange(Wallet wallet) {
         System.out.println("Change: " + wallet.balance);
     }
 }
