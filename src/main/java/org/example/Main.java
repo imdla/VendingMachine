@@ -11,7 +11,7 @@ public class Main {
         Product coke = new Beverage("coke", 1000, 10);
         Product milk = new Beverage("milk", 2000, 5);
         Product coffee = new Beverage("coffee", 3000, 15);
-        Product candy = new EtcProduct("candy", 500, 10);
+        Product candy = new EtcProduct("candy", 1000, 10);
         Product snack = new EtcProduct("snack", 2000, 20);
         Product popcorn = new EtcProduct("popcorn", 3000, 10);
 

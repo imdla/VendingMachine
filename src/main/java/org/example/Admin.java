@@ -36,7 +36,7 @@ public class Admin extends User implements ProductManagable, ProductNameValidabl
     public void setProductPrice(String name, int price) {
         Map<String, List<Integer>> productMap = vendingMachine.productMap;
 
-        if (validationProductName(name)) {
+        if (validationProductName(name) && validationPrice(price)) {
             List<Integer> productList = productMap.get(name);
             productList.set(0, price);
             System.out.println(name + ": " + productList.getFirst());
@@ -45,6 +45,17 @@ public class Admin extends User implements ProductManagable, ProductNameValidabl
         }
     }
 
+    // 금액 검사
+    public boolean validationPrice(int price) {
+        if (price > 0 || Math.log10(price)+1 > 3) {
+            return true;
+        } else {
+            System.out.println("Enter 1000 won or more");
+            return false;
+        }
+    }
+
+    // 제품명 검사
     @Override
     public boolean validationProductName(String productName) {
         if (vendingMachine.productMap.get(productName) == null) {
