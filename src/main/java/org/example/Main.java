@@ -52,12 +52,15 @@ public class Main {
         customer.buy(productName);
 
         // 관리자
+        // 1. 재고 관리
         System.out.println();
         admin.manageStock();
 
+        // 2. 매출 확인
         System.out.println();
         admin.showSales();
 
+        // 3. 상품 가격 설정
         System.out.println();
         admin.setProductPrice("coke", 100);
     }
