@@ -50,6 +50,7 @@ public class VendingMachine {
         // 매출 업데이트
         salesUpdate(productName);
     }
+
     // 재고 업데이트
     public void stockUpdate(String productName) {
         List<Integer> productList = productMap.get(productName);
