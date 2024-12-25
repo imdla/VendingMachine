@@ -30,37 +30,53 @@ public class VendingMachine implements Updatable {
         String paymentType = String.valueOf(wallet.type);
         Paymentable paymentable = null;
 
-        // 가격 조회
         List<Integer> productList = productMap.get(productName);
         int productPrice = productList.getFirst();
 
-        // 결제
-        switch (paymentType) {
-            case "CASH":
-                paymentable = new CashPayment();
-                break;
-            case "CARD":
-                paymentable = new CardPayment();
-                break;
-        }
-        paymentable.pay(wallet, productPrice);
+        // 재고 조회
+        if (checkStock(productName)) {
+            // 결제
+            switch (paymentType) {
+                case "CASH":
+                    paymentable = new CashPayment();
+                    break;
+                case "CARD":
+                    paymentable = new CardPayment();
+                    break;
+            }
+            paymentable.pay(wallet, productPrice);
 
-        // 재고 업데이트
-        stockUpdate(productName);
-        // 매출 업데이트
-        salesUpdate(productName);
+            // 재고 업데이트
+            updateStock(productName);
+            // 매출 업데이트
+            updateSales(productName);
+        } else {
+            System.out.println("Out of stock !");
+        }
+    }
+
+    // 재고 조회
+    public boolean checkStock(String productName) {
+        List<Integer> productList = productMap.get(productName);
+        int productStock = productList.getLast();
+
+        if (productStock > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     // 재고 업데이트
     @Override
-    public void stockUpdate(String productName) {
+    public void updateStock(String productName) {
         List<Integer> productList = productMap.get(productName);
         productList.set(1, productList.get(1)-1);
     }
 
     // 매출 업데이트
     @Override
-    public void salesUpdate(String productName) {
+    public void updateSales(String productName) {
         int amount = productSales.getOrDefault(productName, 0);
         productSales.put(productName, amount + 1);
     }

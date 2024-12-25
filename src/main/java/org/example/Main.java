@@ -2,11 +2,12 @@ package org.example;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
         // 제품 추가
-        Product coke = new Beverage("coke", 1000, 10);
+        Product coke = new Beverage("coke", 1000, 1);
         Product milk = new Beverage("milk", 2000, 5);
         Product coffee = new Beverage("coffee", 3000, 15);
         Product candy = new EtcProduct("candy", 1000, 10);
@@ -54,10 +55,12 @@ public class Main {
         // 관리자
         System.out.println();
         Admin admin = new Admin(vm);
-        admin.stockManagement();
+        admin.manageStock();
 
         System.out.println();
         admin.showSales();
+
+        System.out.println();
         admin.setProductPrice("coke", 100);
     }
 }

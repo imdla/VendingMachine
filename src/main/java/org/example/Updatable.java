@@ -2,7 +2,7 @@ package org.example;
 
 public interface Updatable {
 
-    void stockUpdate(String productName);
+    void updateStock(String productName);
 
-    void salesUpdate(String productName);
+    void updateSales(String productName);
 }
