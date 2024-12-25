@@ -30,11 +30,9 @@ public class VendingMachine {
         String paymentType = String.valueOf(wallet.type);
         Paymentable paymentable = null;
 
-        // 금액 및 재고 확인, 재고 업데이트
+        // 가격 조회
         List<Integer> productList = productMap.get(productName);
         int productPrice = productList.getFirst();
-        int productStock = productList.getLast();
-        productStock = productStock - 1;
 
         // 결제
         switch (paymentType) {
@@ -47,7 +45,19 @@ public class VendingMachine {
         }
         paymentable.pay(wallet, productPrice);
 
+        // 재고 업데이트
+        stockUpdate(productName);
         // 매출 업데이트
+        salesUpdate(productName);
+    }
+    // 재고 업데이트
+    public void stockUpdate(String productName) {
+        List<Integer> productList = productMap.get(productName);
+        productList.set(1, productList.get(1)-1);
+    }
+
+    // 매출 업데이트
+    public void salesUpdate(String productName) {
         int amount = productSales.getOrDefault(productName, 0);
         productSales.put(productName, amount + 1);
     }

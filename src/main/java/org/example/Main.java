@@ -43,8 +43,8 @@ public class Main {
 
         // 2. 고객 생성
         Customer customer = new Customer(vm, wallet);
-//
-//         // 3. 상품 구매
+
+        // 3. 상품 구매
         System.out.println();
         System.out.println("What kind of product are you going to buy ?");
         List<String> productList = vm.productMap.keySet().stream()
@@ -59,10 +59,13 @@ public class Main {
 //
 //        customer2.buy("popcorn");
 //
-//        // 관리자
-//        Admin admin = new Admin(vm);
-//        admin.stockManagement();
-//        admin.showSales();
-//        admin.setProductPrice("coke", 100);
+        // 관리자
+        System.out.println();
+        Admin admin = new Admin(vm);
+        admin.stockManagement();
+
+        System.out.println();
+        admin.showSales();
+        admin.setProductPrice("coke", 100);
     }
 }

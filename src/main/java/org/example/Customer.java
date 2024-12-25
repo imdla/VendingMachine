@@ -14,7 +14,7 @@ public class Customer extends User {
     }
 
     // 제품명 검사
-//    private boolean validationProductName() {
-//
-//    }
+    private boolean validationProductName() {
+
+    }
 }
