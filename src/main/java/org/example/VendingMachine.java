@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class VendingMachine {
+public class VendingMachine implements Updatable {
     public Map<String, List<Integer>> productMap;
     public Map<String, Integer> productSales;
 
@@ -52,12 +52,14 @@ public class VendingMachine {
     }
 
     // 재고 업데이트
+    @Override
     public void stockUpdate(String productName) {
         List<Integer> productList = productMap.get(productName);
         productList.set(1, productList.get(1)-1);
     }
 
     // 매출 업데이트
+    @Override
     public void salesUpdate(String productName) {
         int amount = productSales.getOrDefault(productName, 0);
         productSales.put(productName, amount + 1);
