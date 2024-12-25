@@ -18,6 +18,7 @@ public class Customer extends User implements ProductNameValidable {
     }
 
     // 제품명 검사
+    @Override
     public boolean validationProductName(String productName) {
         if (vendingMachine.productMap.get(productName) == null) {
             return false;
