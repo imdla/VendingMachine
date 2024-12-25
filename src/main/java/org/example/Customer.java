@@ -13,11 +13,9 @@ public class Customer extends User implements ProductNameValidable {
         if (validationProductName(productName)) {
             vendingMachine.pay(productName, wallet);
         } else {
-            System.out.println("Wrong product name !");
+            System.out.println("Invalid product name !");
         }
     }
-
-
 
     // 제품명 검사
     public boolean validationProductName(String productName) {
