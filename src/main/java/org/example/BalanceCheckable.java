@@ -1,5 +1,5 @@
 package org.example;
 
 public interface BalanceCheckable {
-    void balanceCheck(Wallet wallet);
+    void checkBalance(Wallet wallet);
 }
