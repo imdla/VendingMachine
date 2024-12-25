@@ -3,7 +3,7 @@ package org.example;
 import java.util.List;
 import java.util.Map;
 
-public class Admin extends User implements ProductManagable, ProductNameValidable {
+public class Admin extends User implements ProductManagable, ProductNameValidable, PriceValidable {
 
     public Admin(VendingMachine vendingMachine) {
         super(vendingMachine);
@@ -46,6 +46,7 @@ public class Admin extends User implements ProductManagable, ProductNameValidabl
     }
 
     // 금액 검사
+    @Override
     public boolean validationPrice(int price) {
         if (price > 0 || Math.log10(price)+1 > 3) {
             return true;
