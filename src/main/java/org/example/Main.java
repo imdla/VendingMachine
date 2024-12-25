@@ -1,13 +1,15 @@
 package org.example;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
         // 제품 추가
-        Product coke = new Beverage("coke", 1000, 0);
+        Product coke = new Beverage("coke", 1000, 10);
         Product milk = new Beverage("milk", 2000, 5);
         Product coffee = new Beverage("coffee", 3000, 15);
         Product candy = new EtcProduct("candy", 1000, 10);
@@ -46,15 +48,15 @@ public class Main {
         // 3. 상품 구매
         System.out.println();
         System.out.println("What kind of product are you going to buy ?");
-        List<String> productList = vm.productMap.keySet().stream()
-                .toList();
-        System.out.println(productList);
+
+        Admin admin = new Admin(vm);
+        admin.manageStock();
+
         String productName = scanner.next();
         customer.buy(productName);
 
         // 관리자
         System.out.println();
-        Admin admin = new Admin(vm);
         admin.manageStock();
 
         System.out.println();
