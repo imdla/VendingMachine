@@ -25,7 +25,7 @@ public class Admin extends User implements ProductManagable, ProductNameValidabl
 
         for (String name : vendingMachine.productMap.keySet()) {
             List<Integer> productList = vendingMachine.productMap.get(name);
-            int productPrice = productList.getLast();
+            int productPrice = productList.getFirst();
             int sales = productSales.get(name) * productPrice;
             System.out.println(name + ": " + sales + " won");
         }
