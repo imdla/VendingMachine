@@ -1,9 +1,7 @@
 package org.example;
 
-import java.util.ArrayDeque;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -52,12 +50,6 @@ public class Main {
         System.out.println(productList);
         String productName = scanner.next();
         customer.buy(productName);
-
-        // 다른 고객
-//        Wallet wallet2 = new Wallet("cash", 10000);
-//        Customer customer2 = new Customer(vm, wallet2);
-//
-//        customer2.buy("popcorn");
 
         // 관리자
         System.out.println();
