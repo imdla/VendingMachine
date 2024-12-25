@@ -58,7 +58,7 @@ public class Main {
 //        Customer customer2 = new Customer(vm, wallet2);
 //
 //        customer2.buy("popcorn");
-//
+
         // 관리자
         System.out.println();
         Admin admin = new Admin(vm);

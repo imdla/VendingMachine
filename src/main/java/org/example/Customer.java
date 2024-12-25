@@ -10,11 +10,19 @@ public class Customer extends User {
 
     // 상품 구매
     public void buy(String productName) {
-        vendingMachine.pay(productName, wallet);
+        if (validationProductName(productName)) {
+            vendingMachine.pay(productName, wallet);
+        } else {
+            System.out.println("Wrong product name !");
+        }
     }
 
     // 제품명 검사
-    private boolean validationProductName() {
-
+    private boolean validationProductName(String productName) {
+        if (vendingMachine.productMap.get(productName) == null) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
