@@ -11,7 +11,7 @@ public class Admin extends User implements ProductManagable, ProductNameValidabl
 
     // 재고 관리
     @Override
-    public void stockManagement() {
+    public void manageStock() {
         for (String name : vendingMachine.productMap.keySet()) {
             List<Integer> productList = vendingMachine.productMap.get(name);
             System.out.println(name + ": " + productList.getLast());

@@ -2,7 +2,7 @@ package org.example;
 
 public interface ProductManagable {
     // 재고 관리
-    void stockManagement();
+    void manageStock();
 
     // 매출 확인
     void showSales();
