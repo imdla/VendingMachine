@@ -13,16 +13,26 @@ public class Customer extends User implements ProductNameValidatable {
 
     // 자판기 사용
     public void use(VendingMachine vendingMachine){
-        if (vendingMachine.use(wallet)) {
-            // 메뉴 선택
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("What kind of product are you going to buy ?");
-            String productName = scanner.next();
+        boolean flag = true;
+        while (flag) {
+            if (vendingMachine.use(wallet)) {
+                // 메뉴 선택
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("What kind of product are you going to buy ?");
+                System.out.println("[ If you don't want to buy something, type 'cancel'. ]");
+                String productName = scanner.next();
 
-            //상품 구매
-            buy(productName, vendingMachine);
-        } else {
-            System.out.println("You have a small balance !");
+                if (productName.toLowerCase().equals("cancel")) {
+                    System.out.println("The puchase has been completed.");
+                    break;
+                }
+
+                //상품 구매
+                buy(productName, vendingMachine);
+            } else {
+                System.out.println("You have a small balance !");
+                flag = false;
+            }
         }
     }
 
