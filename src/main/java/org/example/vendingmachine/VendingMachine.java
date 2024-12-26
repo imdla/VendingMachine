@@ -8,7 +8,7 @@ import org.example.user.Wallet;
 
 import java.util.*;
 
-public class VendingMachine implements Updatable, stockCheckable, ProductsShowable {
+public class VendingMachine implements Updatable, stockCheckable, ProductsShowable, ProductMinPriceValidatable {
     public Map<String, List<Integer>> productMap;
     public Map<String, Integer> productSales;
 
@@ -41,6 +41,7 @@ public class VendingMachine implements Updatable, stockCheckable, ProductsShowab
     }
 
     // 제품 최소 금액과 잔액 비교
+    @Override
     public boolean validateProductMinPrice(Wallet wallet) {
         int productMinPrice = 10000;
         for (List<Integer> productList : productMap.values()) {
