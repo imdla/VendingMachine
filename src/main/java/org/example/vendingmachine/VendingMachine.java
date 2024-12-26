@@ -6,10 +6,7 @@ import org.example.payment.Paymentable;
 import org.example.product.Product;
 import org.example.user.Wallet;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class VendingMachine implements Updatable, stockCheckable {
     public Map<String, List<Integer>> productMap;
@@ -29,6 +26,48 @@ public class VendingMachine implements Updatable, stockCheckable {
         productMap.put(product.name, productList);
         productSales.put(product.name, 0);
         return productMap;
+    }
+
+    // 사용
+    public boolean use(Wallet wallet) {
+        // 제품 최소 금액과 잔액 비교
+        if (validateProductMinPrice(wallet)) {
+            // 제품 보여주기
+            showProducts();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // 제품 최소 금액과 잔액 비교
+    public boolean validateProductMinPrice(Wallet wallet) {
+        int productMinPrice = 10000;
+        for (List<Integer> productList : productMap.values()) {
+            int productPrice = productList.getFirst();
+            productMinPrice = Math.min(productMinPrice, productPrice);
+        }
+
+        if (productMinPrice > wallet.balance) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    // 제품 보여주기
+    public void showProducts() {
+        for (String name : productMap.keySet()) {
+            List<Integer> productList = productMap.get(name);
+            int productPrice = productList.getFirst();
+            int productStock = productList.getLast();
+
+            if (productStock == 0) {
+                System.out.println(name + ": " + "SoldOut");
+            } else {
+                System.out.println(name + ": " + productPrice + "won");
+            }
+        }
     }
 
     // 결제
