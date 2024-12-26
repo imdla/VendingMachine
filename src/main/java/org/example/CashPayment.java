@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.user.Wallet;
+
 public class CashPayment implements Paymentable, Changeable {
 
     // 결제

@@ -1,10 +1,10 @@
-package org.example;
+package org.example.user;
 
 public class Wallet {
-    protected Type type;
-    protected int balance;
+    public Type type;
+    public int balance;
 
-    protected enum Type {
+    public enum Type {
         CARD,
         CASH;
     }

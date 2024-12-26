@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.user.Wallet;
+
 public class CardPayment implements Paymentable, BalanceCheckable {
 
     // 결제

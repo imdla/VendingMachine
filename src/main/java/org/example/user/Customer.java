@@ -1,4 +1,7 @@
-package org.example;
+package org.example.user;
+
+import org.example.ProductNameValidatable;
+import org.example.VendingMachine;
 
 import java.util.List;
 import java.util.Scanner;
@@ -14,10 +17,12 @@ public class Customer extends User implements ProductNameValidatable {
     public void use(VendingMachine vendingMachine){
         // 자판기 상품 보여주기
         showProducts(vendingMachine);
+
         // 메뉴 선택
         Scanner scanner = new Scanner(System.in);
         System.out.println("What kind of product are you going to buy ?");
         String productName = scanner.next();
+
         // 상품 구매
         buy(productName, vendingMachine);
     }

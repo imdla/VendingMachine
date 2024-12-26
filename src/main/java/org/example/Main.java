@@ -1,5 +1,9 @@
 package org.example;
 
+import org.example.user.Admin;
+import org.example.user.Customer;
+import org.example.user.Wallet;
+
 import java.util.Scanner;
 
 public class Main {
@@ -44,7 +48,6 @@ public class Main {
         // 3. 상품 구매
         System.out.println();
         customer.use(vm);
-
 
         // 관리자
         // 1. 재고 관리
