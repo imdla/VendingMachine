@@ -1,10 +1,10 @@
-package org.example;
+package org.example.product;
 
 public abstract class Product {
-    protected String name;
-    protected int price;
-    protected int stock;
-    protected Type type;
+    public String name;
+    public int price;
+    public int stock;
+    public Type type;
 
     protected enum Type {
         BEVERAGE,

@@ -1,5 +1,9 @@
-package org.example;
+package org.example.vendingmachine;
 
+import org.example.payment.CardPayment;
+import org.example.payment.CashPayment;
+import org.example.payment.Paymentable;
+import org.example.product.Product;
 import org.example.user.Wallet;
 
 import java.util.ArrayList;

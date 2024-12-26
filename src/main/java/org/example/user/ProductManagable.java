@@ -1,4 +1,4 @@
-package org.example;
+package org.example.user;
 
 public interface ProductManagable {
     // 재고 관리

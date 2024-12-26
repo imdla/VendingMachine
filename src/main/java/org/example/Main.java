@@ -1,8 +1,12 @@
 package org.example;
 
+import org.example.product.Beverage;
+import org.example.product.EtcProduct;
+import org.example.product.Product;
 import org.example.user.Admin;
 import org.example.user.Customer;
 import org.example.user.Wallet;
+import org.example.vendingmachine.VendingMachine;
 
 import java.util.Scanner;
 

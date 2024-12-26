@@ -1,4 +1,4 @@
-package org.example;
+package org.example.product;
 
 public class EtcProduct extends Product {
 

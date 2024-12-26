@@ -1,9 +1,6 @@
 package org.example.user;
 
-import org.example.PriceValidatable;
-import org.example.ProductManagable;
-import org.example.ProductNameValidatable;
-import org.example.VendingMachine;
+import org.example.vendingmachine.VendingMachine;
 
 import java.util.List;
 import java.util.Map;
