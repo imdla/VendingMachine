@@ -1,4 +1,8 @@
 package org.example.user;
 
-public interface ProductsShowable c{
+import org.example.vendingmachine.VendingMachine;
+
+public interface ProductsShowable {
+
+    void showProducts(VendingMachine vendingMachine);
 }

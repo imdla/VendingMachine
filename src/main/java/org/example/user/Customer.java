@@ -5,7 +5,7 @@ import org.example.vendingmachine.VendingMachine;
 import java.util.List;
 import java.util.Scanner;
 
-public class Customer extends User implements ProductNameValidatable {
+public class Customer extends User implements ProductNameValidatable, ProductsShowable {
     protected Wallet wallet;
 
     public Customer(Wallet wallet) {
