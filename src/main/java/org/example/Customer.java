@@ -1,6 +1,6 @@
 package org.example;
 
-public class Customer extends User implements ProductNameValidable {
+public class Customer extends User implements ProductNameValidatable {
     protected Wallet wallet;
 
     public Customer(VendingMachine vendingMachine, Wallet wallet) {

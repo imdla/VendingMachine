@@ -3,7 +3,7 @@ package org.example;
 import java.util.List;
 import java.util.Map;
 
-public class Admin extends User implements ProductManagable, ProductNameValidable, PriceValidable {
+public class Admin extends User implements ProductManagable, ProductNameValidatable, PriceValidatable {
 
     public Admin(VendingMachine vendingMachine) {
         super(vendingMachine);
@@ -36,7 +36,7 @@ public class Admin extends User implements ProductManagable, ProductNameValidabl
     public void setProductPrice(String name, int price) {
         Map<String, List<Integer>> productMap = vendingMachine.productMap;
 
-        if (validationProductName(name) && validatePrice(price)) {
+        if (validateProductName(name) && validatePrice(price)) {
             List<Integer> productList = productMap.get(name);
             productList.set(0, price);
             System.out.println(name + ": " + productList.getFirst());
@@ -58,7 +58,7 @@ public class Admin extends User implements ProductManagable, ProductNameValidabl
 
     // 제품명 검사
     @Override
-    public boolean validationProductName(String productName) {
+    public boolean validateProductName(String productName) {
         if (vendingMachine.productMap.get(productName) == null) {
             return false;
         } else {
