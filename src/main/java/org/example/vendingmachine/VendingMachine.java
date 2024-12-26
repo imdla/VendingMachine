@@ -8,7 +8,7 @@ import org.example.user.Wallet;
 
 import java.util.*;
 
-public class VendingMachine implements Updatable, stockCheckable {
+public class VendingMachine implements Updatable, stockCheckable, ProductsShowable {
     public Map<String, List<Integer>> productMap;
     public Map<String, Integer> productSales;
 
@@ -56,6 +56,7 @@ public class VendingMachine implements Updatable, stockCheckable {
     }
 
     // 제품 보여주기
+    @Override
     public void showProducts() {
         for (String name : productMap.keySet()) {
             List<Integer> productList = productMap.get(name);
