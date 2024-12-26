@@ -15,7 +15,7 @@ public class Customer extends User implements ProductNameValidatable {
     // 자판기 사용
     public void use(VendingMachine vendingMachine){
         // 내가 가진 금액 > 자판기 최소 금액 확인
-        if (validateProductsMinPrice(vendingMachine, wallet)) {
+        if (validateProductMinPrice(vendingMachine, wallet)) {
             // 자판기 상품 보여주기
             showProducts(vendingMachine);
 
@@ -31,8 +31,8 @@ public class Customer extends User implements ProductNameValidatable {
         }
     }
 
-    // 자판기 최소 금액보다 큰지 검사
-    public boolean validateProductsMinPrice(VendingMachine vendingMachine, Wallet wallet) {
+    // 자판기 최소 금액보다 잔액이 큰지 검사
+    public boolean validateProductMinPrice(VendingMachine vendingMachine, Wallet wallet) {
         int productMinPrice = 10000;
         for (List<Integer> productList : vendingMachine.productMap.values()) {
             int productPrice = productList.getFirst();
