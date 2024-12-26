@@ -10,7 +10,7 @@ public class Customer extends User implements ProductNameValidatable {
 
     // 상품 구매
     public void buy(String productName) {
-        if (validationProductName(productName)) {
+        if (validateProductName(productName)) {
             vendingMachine.pay(productName, wallet);
         } else {
             System.out.println("Invalid product name !");
@@ -19,7 +19,7 @@ public class Customer extends User implements ProductNameValidatable {
 
     // 제품명 검사
     @Override
-    public boolean validationProductName(String productName) {
+    public boolean validateProductName(String productName) {
         if (vendingMachine.productMap.get(productName) == null) {
             return false;
         } else {
