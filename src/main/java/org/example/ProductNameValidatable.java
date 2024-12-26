@@ -2,5 +2,5 @@ package org.example;
 
 public interface ProductNameValidatable {
 
-    boolean validateProductName(String productName);
+    boolean validateProductName(String productName, VendingMachine vendingMachine);
 }

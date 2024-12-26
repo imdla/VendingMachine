@@ -4,9 +4,10 @@ import java.util.List;
 import java.util.Map;
 
 public class Admin extends User implements ProductManagable, ProductNameValidatable, PriceValidatable {
+    protected VendingMachine vendingMachine;
 
     public Admin(VendingMachine vendingMachine) {
-        super(vendingMachine);
+        this.vendingMachine = vendingMachine;
     }
 
     // 재고 관리
@@ -36,7 +37,7 @@ public class Admin extends User implements ProductManagable, ProductNameValidata
     public void setProductPrice(String name, int price) {
         Map<String, List<Integer>> productMap = vendingMachine.productMap;
 
-        if (validateProductName(name) && validatePrice(price)) {
+        if (validateProductName(name, vendingMachine) && validatePrice(price)) {
             List<Integer> productList = productMap.get(name);
             productList.set(0, price);
             System.out.println(name + ": " + productList.getFirst());
@@ -58,7 +59,7 @@ public class Admin extends User implements ProductManagable, ProductNameValidata
 
     // 제품명 검사
     @Override
-    public boolean validateProductName(String productName) {
+    public boolean validateProductName(String productName, VendingMachine vendingMachine) {
         if (vendingMachine.productMap.get(productName) == null) {
             return false;
         } else {

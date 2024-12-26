@@ -39,22 +39,17 @@ public class Main {
 //        }
 
         // 2. 고객 생성
-        Customer customer = new Customer(vm, wallet);
+        Customer customer = new Customer(wallet);
 
         // 3. 상품 구매
         System.out.println();
-        System.out.println("What kind of product are you going to buy ?");
+        customer.use(vm);
 
-        Admin admin = new Admin(vm);
-        admin.manageStock();
-
-        String productName = scanner.next();
-        customer.use(vm)
-        customer.buy(productName);
 
         // 관리자
         // 1. 재고 관리
         System.out.println();
+        Admin admin = new Admin(vm);
         admin.manageStock();
 
         // 2. 매출 확인
