@@ -10,6 +10,8 @@ public class Customer extends User implements ProductNameValidatable {
 
     // 상품 구매
     public void buy(String productName) {
+        메뉴 출력
+        scanner
         if (validateProductName(productName)) {
             vendingMachine.pay(productName, wallet);
         } else {
@@ -17,6 +19,11 @@ public class Customer extends User implements ProductNameValidatable {
         }
     }
 
+    use(){
+        show menu
+        choose menu
+        buy
+    }
     // 제품명 검사
     @Override
     public boolean validateProductName(String productName) {

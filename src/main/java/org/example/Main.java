@@ -49,6 +49,7 @@ public class Main {
         admin.manageStock();
 
         String productName = scanner.next();
+        customer.use(vm)
         customer.buy(productName);
 
         // 관리자
